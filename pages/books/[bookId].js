@@ -149,23 +149,23 @@ export default function book({ book }) {
     </>
   );
 }
-export async function getStaticPaths() {
-  const response = await fetch('http://localhost:3000/api/books');
-  const data = await response.json();
-  const paths = data.map((book) => {
-    return {
-      params: {
-        bookId: `${book._id}`,
-      },
-    };
-  });
-  return {
-    paths: paths,
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   const response = await fetch('http://localhost:3000/api/books');
+//   const data = await response.json();
+//   const paths = data.map((book) => {
+//     return {
+//       params: {
+//         bookId: `${book._id}`,
+//       },
+//     };
+//   });
+//   return {
+//     paths: paths,
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideprops(context) {
   const { params } = context;
   const response = await fetch(
     `http://localhost:3000/api/books/${params.bookId}`
