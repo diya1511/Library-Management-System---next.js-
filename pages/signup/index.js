@@ -20,7 +20,7 @@ export default function signup() {
 
     try {
       const res = await axios.post(
-        'https://library-management-system-next-6ifgyqxl0-diya1511.vercel.app/api/users/signup',
+        'https://library-management-system-next-js.vercel.app//api/users/signup',
         user
       );
       toast.success('User created Successfully', res.name);
