@@ -12,7 +12,7 @@ export default function RemoveBook() {
     e.preventDefault();
     try {
       await axios.delete(
-        `https://library-management-system-next-js-briu.vercel.app/api/books/delete`,
+        `library-management-system-next-js.vercel.app/api/books/delete`,
         {
           data: { id },
         }

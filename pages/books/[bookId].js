@@ -170,7 +170,7 @@ export async function getServerSideProps(context) {
   console.log('params', params);
 
   const response = await fetch(
-    `http://library-management-system-next-js-briu.vercel.app/api/books/${params.bookId}`
+    `library-management-system-next-js.vercel.app/api/books/${params.bookId}`
   );
 
   if (!response.ok) {

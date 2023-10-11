@@ -15,7 +15,7 @@ function UpdateBook() {
     e.preventDefault();
     try {
       await axios.post(
-        'https://library-management-system-next-js-briu.vercel.app/api/books/add',
+        'library-management-system-next-js.vercel.app/api/books/add',
         {
           title,
           author,

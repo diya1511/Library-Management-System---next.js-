@@ -20,7 +20,7 @@ function UpdateBook() {
   const updateBooks = async () => {
     try {
       const response = await fetch(
-        `https://library-management-system-next-js-briu.vercel.app/api/books/${bookId}`
+        `library-management-system-next-js.vercel.app/api/books/${bookId}`
       );
       const data = await response.json();
       console.log(data);
@@ -39,7 +39,8 @@ function UpdateBook() {
     const id = router.query.bookId;
     try {
       await axios.put(
-        `https://library-management-system-next-js-briu.vercel.app/api/books/edit/${id}`,
+        `library-management-system-next-js.vercel.app
+        /api/books/edit/${id}`,
         {
           id,
           title,
