@@ -19,7 +19,9 @@ function UpdateBook() {
   }, [bookId]);
   const updateBooks = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/books/${bookId}`);
+      const response = await fetch(
+        `https://library-management-system-next-js-briu.vercel.app/api/books/${bookId}`
+      );
       const data = await response.json();
       console.log(data);
       const { title, author, excerpt, content, genres } = data;
@@ -36,14 +38,17 @@ function UpdateBook() {
     e.preventDefault();
     const id = router.query.bookId;
     try {
-      await axios.put(`/api/books/edit/${id}`, {
-        id,
-        title,
-        author,
-        excerpt,
-        content,
-        genres,
-      });
+      await axios.put(
+        `https://library-management-system-next-js-briu.vercel.app/api/books/edit/${id}`,
+        {
+          id,
+          title,
+          author,
+          excerpt,
+          content,
+          genres,
+        }
+      );
       router.push('/books');
     } catch (error) {
       console.error('Error updating book:', error);

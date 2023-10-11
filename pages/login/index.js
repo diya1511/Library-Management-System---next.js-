@@ -12,7 +12,10 @@ export default function Login() {
     if (user.email.length == 0 && user.password.length == 0)
       return toast.error('Please fill the following fields');
     try {
-      const res = await axios.post('/api/users/login', user);
+      const res = await axios.post(
+        'https://library-management-system-next-js-briu.vercel.app/api/users/login',
+        user
+      );
       console.log(res);
       console.log(res.data.success);
       if (res.data.success) {

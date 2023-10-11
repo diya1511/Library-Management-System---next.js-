@@ -19,7 +19,10 @@ export default function signup() {
     }
 
     try {
-      const res = await axios.post('/api/users/signup', user);
+      const res = await axios.post(
+        'https://library-management-system-next-js-briu.vercel.app/api/users/signup',
+        user
+      );
       toast.success('User created Successfully', res.name);
       router.push('/login');
     } catch (error) {

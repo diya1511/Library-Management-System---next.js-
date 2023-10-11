@@ -11,9 +11,12 @@ export default function RemoveBook() {
     // const bookId = id;
     e.preventDefault();
     try {
-      await axios.delete(`http://localhost:3000/api/books/delete`, {
-        data: { id },
-      });
+      await axios.delete(
+        `https://library-management-system-next-js-briu.vercel.app/api/books/delete`,
+        {
+          data: { id },
+        }
+      );
       console.log('Book deleted successfully');
       router.push('/books');
     } catch (error) {

@@ -14,13 +14,16 @@ function UpdateBook() {
   const handleAdd = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/books/add', {
-        title,
-        author,
-        excerpt,
-        content,
-        genres,
-      });
+      await axios.post(
+        'https://library-management-system-next-js-briu.vercel.app/api/books/add',
+        {
+          title,
+          author,
+          excerpt,
+          content,
+          genres,
+        }
+      );
       router.push('/books');
     } catch (error) {
       console.error('Error updating book:', error);
