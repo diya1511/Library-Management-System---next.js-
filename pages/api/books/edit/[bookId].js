@@ -3,11 +3,11 @@
 import { connect } from '../../../../config/dbConnect';
 import Book from '../../../../models/books';
 
-connect();
-
 export default async function handler(req, res) {
   if (req.method === 'PUT') {
     try {
+      await connect();
+
       const { id, title, author, excerpt, content, genres } = req.body;
 
       const updatedBook = await Book.findByIdAndUpdate(

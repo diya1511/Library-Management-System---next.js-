@@ -6,11 +6,9 @@ export async function connect() {
       'mongodb+srv://library:library@cluster0.dicfrcn.mongodb.net/'
     );
     const connection = mongoose.connection;
-
     connection.on('connected', () => {
       console.log('MongoDB connected successfully');
     });
-
     connection.on('error', (err) => {
       console.log(
         'MongoDB connection error. Please make sure MongoDB is running. ' + err
