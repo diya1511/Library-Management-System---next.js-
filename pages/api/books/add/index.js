@@ -1,11 +1,11 @@
 import { connect } from '../../../../config/dbConnect';
 import Book from '../../../../models/books';
 
-connect();
-
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
+      await connect();
+
       const { title, author, excerpt, content, genres } = req.body;
 
       const newBook = new Book({

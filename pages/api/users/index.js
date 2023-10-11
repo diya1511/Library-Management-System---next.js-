@@ -1,10 +1,9 @@
 import { connect } from '../../../config/dbConnect';
 import User from '../../../models/user';
 
-connect();
-
 export default async function getBooks(req, res) {
   try {
+    await connect();
     const users = await User.find();
     // console.log(booklist);
     // res.json(booklist);

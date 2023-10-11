@@ -15,10 +15,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-connect();
 
 const defaultTheme = createTheme();
-
+// await connect();
 export default function Books({ books }) {
   const router = useRouter();
   const [islogin, setIsLogin] = useState(false);
@@ -26,6 +25,7 @@ export default function Books({ books }) {
     router.push('books/add');
   };
   useEffect(() => {
+    // await connect();
     if (localStorage.getItem('isLoggedIn')) {
       setIsLogin(true);
     }

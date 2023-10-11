@@ -4,9 +4,10 @@ import User from '../../../../models/user';
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
 import cookie from 'cookie';
-connect();
+
 export default async function handlerlogin(req, res) {
   try {
+    await connect();
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {

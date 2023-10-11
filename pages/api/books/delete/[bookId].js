@@ -3,13 +3,12 @@ import { useRouter } from 'next/router';
 import { connect } from '../../../../config/dbConnect';
 import Book from '../../../../models/books';
 
-connect();
-
 export default async function handler(req, res) {
   const router = useRouter();
 
   if (req.method === 'DELETE') {
     try {
+      await connect();
       const { id } = router.query;
       console.log('id', id);
       const removedBook = await Book.findByIdAndRemove(id);
