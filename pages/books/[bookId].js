@@ -1,4 +1,5 @@
 export default function book({ book }) {
+  console.log('books', book);
   return (
     <>
       <div className="flex items-center justify-center w-full py-8">
@@ -164,17 +165,43 @@ export default function book({ book }) {
 //     fallback: false,
 //   };
 // }
-
-export async function getServerSideprops(context) {
+export async function getServerSideProps(context) {
   const { params } = context;
+  console.log('params', params);
+
   const response = await fetch(
     `http://localhost:3000/api/books/${params.bookId}`
   );
+
+  if (!response.ok) {
+    console.error(`Failed to fetch book data. Status: ${response.status}`);
+    return {
+      notFound: true,
+    };
+  }
+
   const data = await response.json();
-  console.log(data);
+  console.log('API Response:', data);
+
   return {
     props: {
       book: data,
     },
   };
 }
+
+// export async function getServerSideprops(context) {
+//   const { params } = context;
+//   console.log('context', context);
+//   console.log('params');
+//   const response = await fetch(
+//     `http://localhost:3000/api/books/${params.bookId}`
+//   );
+//   const data = await response.json();
+//   console.log(data);
+//   return {
+//     props: {
+//       book: data,
+//     },
+//   };
+// }
