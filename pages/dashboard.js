@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import Navbar from '../nav';
-import bookImg from '../../img/book.jpeg';
-import { connect } from '../../config/dbConnect';
+import Navbar from './nav';
+import bookImg from '../img/book.jpeg';
+import { connect } from '../config/dbConnect';
 import { useRouter } from 'next/router';
 connect();
 
