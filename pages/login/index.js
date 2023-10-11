@@ -13,7 +13,7 @@ export default function Login() {
       return toast.error('Please fill the following fields');
     try {
       const res = await axios.post(
-        'library-management-system-next-js.vercel.app/api/users/login',
+        'https://library-management-system-next-6ifgyqxl0-diya1511.vercel.app/api/users/login',
         user
       );
       console.log(res);

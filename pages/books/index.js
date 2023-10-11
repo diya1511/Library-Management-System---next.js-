@@ -153,7 +153,7 @@ export default function Books({ books }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch('library-management-system-next-js.vercel.app/api/books');
+  const res = await fetch('https://library-management-system-next-6ifgyqxl0-diya1511.vercel.app/api/books');
   const books = await res.json();
   return { props: { books } };
 };
